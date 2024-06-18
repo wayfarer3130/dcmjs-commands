@@ -1,0 +1,58 @@
+{
+  "name": "dcmjs-commands",
+  "version": "0.0.0",
+  "description": "Command Line Tools for dcmjs, dicomweb-client and dimse",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "DCMJS",
+    "DICOM",
+    "DICOMweb"
+  ],
+  "author": "Bill Wallace <bill.wallace@radicalimaging.com>",
+  "engines": {
+    "node": ">=14.18.1",
+    "npm": ">=6.14.15",
+    "yarn": ">=1.22.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wayfarer3130/dcmjs-commands"
+  },
+  "homepage": "https://github.com/wayfarer3130/dcmjs-commands#readme",
+  "license": "MIT",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src",
+    "bin": "bin"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "bin": {
+    "dcmjs": "bin/dcmjs.js"
+  },
+  "scripts": {
+    "test": "jest --config ./jest.config.js",
+    "build": "echo \"No build yet\" && exit 0",
+    "link:exec": "npm install -g && npm link",
+    "lint": "npx eslint --color \"**/*.{js,mjs,cjs}\"",
+    "lint:fix": "npx eslint --fix --color \"**/*.{js,mjs,cjs}\""
+  },
+  "jest": {
+    "verbose": true
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "config-point": ">=0.5.1",
+    "dcmjs": "^0.29.5",
+    "dcmjs-dimse": "0.1.27",
+    "dicomweb-client": "0.8.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "must": "^0.13.4"
+  }
+}
