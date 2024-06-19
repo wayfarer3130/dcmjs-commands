@@ -2,6 +2,7 @@
   "name": "dcmjs-commands",
   "version": "0.0.0",
   "description": "Command Line Tools for dcmjs, dicomweb-client and dimse",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
