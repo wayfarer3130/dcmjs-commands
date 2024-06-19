@@ -33,7 +33,9 @@
     "src"
   ],
   "bin": {
-    "dcmjs": "bin/dcmjs.js"
+    "dcmjs": "bin/dcmjs.js",
+    "dicomwebjs": "bin/dicomwebjs.js",
+    "dimsejs": "bin/dimsejs.js"
   },
   "scripts": {
     "test": "jest --config ./jest.config.js",
