@@ -1,6 +1,8 @@
 import fs from "fs";
 import dcmjs from "dcmjs";
 
+export * as dicomweb from './dicomweb.js';
+
 const { DicomMessage, DicomMetaDictionary } = dcmjs.data;
 
 export function readDicom(fileName) {
