@@ -6,7 +6,8 @@ import zlib from 'zlib';
 export function httprequest(url, _options) {
   return new Promise((resolve, reject) => {
     const urlObj = URL.parse(url, true);
-    const httpType = urlObj.protocol === 'https' ? https : http;
+    const isHttps = urlObj.protocol === 'https:';
+    const httpType = isHttps ? https : http;
 
     const req = httpType.request(urlObj, (res) => {
       if (res.statusCode < 200 || res.statusCode >= 300) {

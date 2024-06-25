@@ -1,3 +1,6 @@
+import zlib from 'zlib';
+import fs from 'fs';
+
 import { httprequest } from './webRetrieve.js';
 
 export function readDicomWeb(url, options = {}) {
@@ -12,6 +15,10 @@ export function readDicomWebHttp(url, options) {
 }
 
 
-export function readDicomWebFile(url, options) {
-  throw new Error('TODO');
+export function readDicomWebFile(fileName, _options) {
+  const isGzip = fileName.endsWith('.gz');
+  const arrayBuffer = fs.readFileSync(fileName).buffer;
+  const uncompressed = isGzip ? zlib.gunzipSync(arrayBuffer) : arrayBuffer;
+  const str = uncompressed.toString();
+  return JSON.parse(str);
 }
